@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { TrackOrderIsland } from '../components/TrackOrderIsland';
+---
+
+<BaseLayout title="Track Order & Pickup — Kora & Co." currentPath="/track">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="mb-8">
+      <p class="text-xs font-medium text-[#5C5B57] mb-2">Store-Managed Collection Workflow</p>
+      <h1 class="font-display text-3xl sm:text-4xl font-semibold text-[#141413]">
+        Track Order &amp; Update Pickup Point
+      </h1>
+      <p class="mt-2 text-sm text-[#5C5B57] max-w-[60ch]">
+        Enter your order reference and checkout email to verify payment settlement and update your collection station until the order is marked Ready for Pickup.
+      </p>
+    </div>
+    <TrackOrderIsland client:load />
+  </div>
+</BaseLayout>

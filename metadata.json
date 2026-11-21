@@ -1,0 +1,6 @@
+{
+  "name": "Kora & Co. Commerce",
+  "description": "Unified full-stack e-commerce storefront, authoritative backend API, Stripe and M-Pesa checkout, pickup tracking, and admin operations console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CheckoutIsland } from '../components/CheckoutIsland';
+---
+
+<BaseLayout title="Checkout — Kora & Co." currentPath="/checkout">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <div class="mb-8">
+      <p class="text-xs font-medium text-[#5C5B57] mb-2">Authoritative Settlement</p>
+      <h1 class="font-display text-3xl sm:text-4xl font-semibold text-[#141413]">
+        Checkout &amp; Pickup Station
+      </h1>
+    </div>
+    <CheckoutIsland client:load />
+  </div>
+</BaseLayout>

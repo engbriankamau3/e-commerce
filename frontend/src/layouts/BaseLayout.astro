@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import { SiteHeader } from '../components/SiteHeader';
+
+interface Props {
+  title?: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const {
+  title = 'Kora & Co. — Curated Everyday Objects',
+  description = 'Unified full-stack e-commerce storefront with server-verified Stripe and M-Pesa checkout and store-managed pickup tracking.',
+  currentPath = '/',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#FAFAF8] text-[#141413]">
+    <SiteHeader client:load currentPath={currentPath} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <footer class="border-t border-[#141413]/10 bg-[#F3F2EE]/60 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <p class="font-display text-base font-semibold text-[#141413]">Kora &amp; Co.</p>
+          <p className="text-xs text-[#5C5B57] mt-1">
+            Curated everyday carry, stoneware, and apparel · Store-managed Nairobi &amp; Mombasa pickup hubs
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 text-xs font-medium text-[#5C5B57]">
+          <a href="/" class="hover:text-[#141413] py-2">Catalog</a>
+          <a href="/checkout" class="hover:text-[#141413] py-2">Checkout</a>
+          <a href="/track" class="hover:text-[#141413] py-2">Track Order</a>
+          <a href="/account" class="hover:text-[#141413] py-2">Account</a>
+          <a href="/admin" class="hover:text-[#141413] py-2">Admin Console</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
